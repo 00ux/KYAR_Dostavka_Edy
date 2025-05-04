@@ -1,0 +1,321 @@
+@import 'variables.scss';
+@font-face {
+    font-family: 'Montserrat';
+    src: url('../fonts/Montserrat-VariableFont_wght.ttf');
+}
+
+@font-face {
+    font-family: 'Vollkorn';
+    src: url('../fonts/Vollkorn-VariableFont_wght.ttf');
+}
+
+@mixin font-face($font-family, $src) {
+    @font-face {
+        font-family: $font-family;
+        src: url($src);
+    }
+}
+
+@mixin montserrat($size) {
+    font-family: 'Montserrat';
+    font-size: $size;
+}
+
+@mixin vollkorn($size) {
+    font-family: 'Vollkorn';
+    font-size: $size;
+}
+
+@mixin absolute-position($left, $top, $width: null) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    @if $width {
+        width: $width;
+    }
+}
+
+body {
+    width: 100%;
+    height: 100%;
+}
+
+
+
+.parent {
+    display: grid;
+    grid-template-columns: repeat(12, 0.05fr);
+    grid-template-rows: repeat(12, 0.05fr);
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    grid-template-areas:
+        "h h h h h h h h h h h h"
+        "h h h h h h h h h h h h"
+        "h h h h h h h h h h h h"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a"
+        "a a a a a a a a a a a a";
+
+    > header {
+        grid-area: h;
+        display: flex;
+        height: 35%;
+        width: 100%;
+    }
+
+    > article {
+        height: 65%;
+        width: 100%;
+    }
+}
+
+.logo {
+    display: inline-block;
+    height: 150px;
+    position: relative;
+    left: 50px;
+}
+
+.P1 {
+    display: inline-block;
+    height: 10%;
+    width: 100%;
+    @include montserrat(4.2vh);
+    @include absolute-position(0px, -3%);
+}
+
+.img1 {
+    display: inline-block;
+    height: 10%;
+    width: 5%;
+    @include absolute-position(40%, -1.2%);
+}
+
+.infotop {
+    @include montserrat(4.4vh);
+    @include absolute-position(0%, 35%, 30%);
+}
+
+.infotopsale {
+    @include montserrat(4.8vh);
+    @include absolute-position(72%, 20%, 27%);
+}
+
+.infobtm {
+    @include vollkorn(2.4vh);
+    @include absolute-position(0%, 42%, 25%);
+}
+
+.infobtmline2 {
+    @include vollkorn(2.4vh);
+    @include absolute-position(0%, 55%, 25%);
+}
+
+.infobtmgreen {
+    @include vollkorn(2.4vh);
+    @include absolute-position(72%, 40%);
+    color: $green;
+}
+
+.infobtmgreenline2 {
+    @include vollkorn(2.4vh);
+    @include absolute-position(72%, 48%);
+    color: $green;
+}
+
+.infotop2 {
+    @include montserrat(4.4vh);
+    @include absolute-position(25%, 35%, 30%);
+}
+
+.infotop2prpl {
+    @include montserrat(4.8vh);
+    @include absolute-position(25%, 40%, 30%);
+    color: $purple;
+}
+
+.infotop2green {
+    @include montserrat(4.8vh);
+    @include absolute-position(25%, 52%, 30%);
+    color: $green;
+}
+
+.infobtm2 {
+    @include vollkorn(2.4vh);
+    @include absolute-position(25%, 60%);
+}
+
+.infobtm2line2 {
+    @include vollkorn(2.4vh);
+    @include absolute-position(25%, 65%);
+}
+
+.linkto1 {
+    display: inline-block;
+    height: 15%;
+    width: 60%;
+    background-color: $light-green;
+    color: black;
+    position: absolute;
+    text-decoration: none;
+    border:1px solid black;
+    @include montserrat(4.8vh);
+    @include absolute-position(0%, 80%);
+}
+.fornewtext{
+color: black;
+position: absolute;
+text-decoration: none;
+font-family: "Montserrat";
+font-size: 4.2vh;
+left: 0%;
+top: 80%;}
+
+.info {
+    display: inline-block;
+    height: 100px;
+    width: 350px;
+    background-color: $light-green;
+    color: black;
+    position: absolute;
+    text-decoration: none;
+    @include vollkorn(2.4vh);
+    left: 600px;
+    top: -450px;
+}
+
+@mixin food-link($left, $image) {
+    background-position: top;
+    display: inline-block;
+    height: 70%;
+    width: 18%;
+    background-image: url($image);
+    background-repeat: no-repeat;
+    color: black;
+    position: absolute;
+    @include vollkorn(2.4vh);
+    text-decoration: none;
+    left: $left;
+    top: 10%;
+}
+
+.linkto3 {
+    @include food-link(0%, "../images/food2.png");
+}
+
+.linkto31 {
+    @include food-link(25%, "../images/food1.png");
+}
+
+.names {
+    @include absolute-position(0.5%, 15%);
+}
+
+.names2 {
+    @include absolute-position(15%, -15%);
+}
+
+.hide {
+    display: none;
+    width: 40%;
+}
+
+@media screen and (max-width: 1028px) {
+    .P1 {
+        @include montserrat(2.2vh);
+        @include absolute-position(0%, -2%);
+        display: inline-block;
+        height: 10%;
+        width: 100%;
+    }
+
+    .img1 {
+        @include absolute-position(61%, -3.6%);
+        display: inline-block;
+        height: 10%;
+        width: 5%;
+    }
+
+    .linkto3, .linkto31 {
+        @include vollkorn(1.8vh);
+        top: 5%;
+    }
+
+    .infotop {
+        @include montserrat(1.8vh);
+        @include absolute-position(0%, 22%, 18%);
+    }
+
+    .infotopsale {
+        @include montserrat(1.5vh);
+        @include absolute-position(72%, 15%, 27%);
+    }
+
+    .infobtm {
+        @include vollkorn(1.2vh);
+        @include absolute-position(0%, 28%, 18%);
+    }
+
+    .infobtmline2 {
+        @include vollkorn(1.1vh);
+        @include absolute-position(0%, 35%, 15%);
+        height: 35%;
+    }
+
+    .infobtmgreen, .infobtmgreenline2 {
+        @include vollkorn(1.6vh);
+        @include absolute-position(72%, null);
+    }
+
+    .infobtmgreen { top: 18% }
+    .infobtmgreenline2 { top: 26% }
+
+    .infotop2 {
+        @include montserrat(1.8vh);
+        @include absolute-position(25%, 22%, 18%);
+    }
+
+    .infotop2prpl {
+        @include montserrat(1.6vh);
+        @include absolute-position(25%, 27%, 30%);
+    }
+
+    .infotop2green {
+        @include montserrat(1.6vh);
+        @include absolute-position(25%, 31%, 30%);
+    }
+
+    .infobtm2 {
+        @include vollkorn(1.2vh);
+        @include absolute-position(25%, 35%);
+        width: 30%;
+    }
+
+    .infobtm2line2 {
+        @include vollkorn(1.0vh);
+        @include absolute-position(25%, 40%);
+        width: 18%;
+    }
+
+    .linkto1 {
+        @include montserrat(2.4vh);
+        @include absolute-position(0%, 47.5%);
+        height: 5%;
+        width: 100%;
+        background-color: $light-green;
+    }
+
+    .names2 {
+        @include absolute-position(15%, -30%);
+    }
+    .fornewtext{
+        
+        @include montserrat(1.4vh);
+        }
+}

@@ -1,0 +1,117 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <link rel="stylesheet" href="css/page3.css" />
+    <title>Блюда для заказа в:KFC</title>
+</head>
+
+
+<body>
+    <div class="parent">
+        <header id="header1">
+
+
+            <p class="P1">Блюда для заказа в:KFC</p>
+            <a href="page2.html"> <img src="images/button.svg" class="img1" /> </a>
+        </header>
+        <article>
+
+
+            <figure class="linkto3" ><p class="names" id="name1html"></p></figure>
+            <figure class="linkto31" ><p class="names" id="name2html"></p></figure>
+            <p class="infotop" id="price1html"></p>
+
+            <p class="infobtm"  id="cal1html"></p>
+            <p class="infobtmline2"  id="madeof1html"></p>
+            <p class="infotop2" id="price2html"></p>
+            <p class="infotop2green" id="di2html"></p>
+            <p class="infotop2prpl" id="uc2html"></p>
+            <p class="infobtm2" id="cal2html"></p>
+            <p class="infobtm2line2" id="madeof2html"></p>
+            <a class="linkto1" href="kyar2.html" id="refresh"><p class="names2">Просмотреть другие блюда</p></a>
+            <aside>
+                <p class="infotopsale">Текущие акции:</p>
+                <p class="infobtmgreen">Бесплатная доставка при заказе от 30 руб.</p>
+                <p class="infobtmgreenline2" id="sale2">Скидка 1 руб. на Гриль Бургер</p>
+            </aside>
+        </article>
+    </div>
+    <xml class="hide">
+        
+        <menu>
+            <food>
+                <name id="name1xml">
+                    3 куриных крылышка
+                </name>
+                <discountinfo>
+                </discountinfo>
+                <userchoice></userchoice>
+                <price id="price1xml">Цена:4.90 руб.</price>
+                <cal id="cal1xml">Калорийность:400 Ккал/1690 Дж на 100 г.</cal>
+                <madeof id="madeof1xml">Состав:мясо куриное,соус,посыпка.</madeof >
+            </food>
+            <food>
+                <name id="name2xml">
+                    Гриль Бургер
+                </name>
+                <discountinfo id="di2xml">
+                    Скидка
+                </discountinfo>
+                <userchoice id="uc2xml">Выбор пользователей</userchoice>
+                <price id="price2xml">Цена:8.90 руб.</price>
+                <cal id="cal2xml">Калорийность:510 Ккал/2130 КДж на 100 г.</cal>
+                <madeof id="madeof2xml">Состав:булка,соус,салат,бекон,огурцы.</madeof>
+            </food>
+        </menu>
+    </xml>
+    <script>document.getElementById("name1html").innerHTML =
+            document.getElementById("name1xml").firstChild.nodeValue;
+        document.getElementById("name2html").innerHTML =
+            document.getElementById("name2xml").firstChild.nodeValue;
+        document.getElementById("di2html").innerHTML =
+            document.getElementById("di2xml").firstChild.nodeValue;
+        document.getElementById("uc2html").innerHTML =
+            document.getElementById("uc2xml").firstChild.nodeValue;
+        document.getElementById("price1html").innerHTML =
+            document.getElementById("price1xml").firstChild.nodeValue;
+        document.getElementById("price2html").innerHTML =
+            document.getElementById("price2xml").firstChild.nodeValue;
+        document.getElementById("cal1html").innerHTML =
+            document.getElementById("cal1xml").firstChild.nodeValue;
+        document.getElementById("cal2html").innerHTML =
+            document.getElementById("cal2xml").firstChild.nodeValue;
+        document.getElementById("madeof1html").innerHTML =
+            document.getElementById("madeof1xml").firstChild.nodeValue;
+        document.getElementById("madeof2html").innerHTML =
+            document.getElementById("madeof2xml").firstChild.nodeValue;
+
+        document.getElementById("sale2").addEventListener('mouseover', (e) => {
+            document.getElementById("sale2").innerHTML = 'Цена без скидки:10 руб.90 коп.';
+            document.getElementById("name2html").style.border = "3px solid green";
+
+        });
+        document.getElementById("sale2").addEventListener('mouseout', (e) => {
+            document.getElementById("sale2").innerHTML = 'Скидка 1 руб. на Гриль Бургер';
+            document.getElementById("name2html").style.border = "0";
+        });
+        document.getElementById('refresh').addEventListener('click', function (e) {
+            e.preventDefault();
+            const element = e.currentTarget;
+
+            
+            element.textContent = "Других блюд пока нет в наличии! Но вы можете ознакомиться с блюдами, имеющимися в наличии, и действующими акциями.";
+
+            
+            element.classList.add("fornewtext");
+
+            
+            element.style.pointerEvents = 'none';
+        });
+
+    </script>
+</body>
+</html>
+
+    

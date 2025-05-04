@@ -1,0 +1,30 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<info>
+	<rest id="name1xml">
+		KFC
+	</rest>
+	<rest id="name2xml">
+		Mak.by
+	</rest>
+	<rest id="name3xml">
+		Papa Doner
+	</rest>
+	<cafe id="name4xml">
+		Bubble Tea
+	</cafe>
+	<cafe id="name5xml">
+		Klaus Cafe
+	</cafe>
+	<cafe id="name6xml">
+		Драники &amp; Кава
+	</cafe>
+	<food id="name7xml">
+		Харчо
+	</food>
+	<food id="name8xml">
+		Эклер малиновый
+	</food>
+	<food id="name9xml">
+		Сэндвич с курочкой
+	</food>
+</info>

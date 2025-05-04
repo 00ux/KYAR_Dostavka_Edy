@@ -1,0 +1,72 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>Ресторан KFC</title>
+    <link rel="stylesheet" href="css/page2.css" />
+</head>
+
+    
+<body>
+    <div class="parent">
+        <header id="header1">
+
+            <a href="mainpage.html"><img src="images/logo.svg" class="logo" /></a>
+            <p class="P1" id="namehtml"></p>
+        </header>
+        <article>
+            <img src="images/kfc.jpg" class="img1" />
+            <p class="infotop" id="ratinghtml"></p>
+            <aside>
+                <p class="infobtm" id="rewhtml"></p>
+                <p class="infotopline2" id="info1html"></p>
+                <p class="infobtmline2" id="info2html"></p>
+                <p class="infotop2" id="newhtml"></p>
+                <p class="infobtmline3" id="newnumhtml"></p>
+            </aside>
+            <a class="linkto1" href="page3.html"><p class="names">Просмотреть блюда</p></a>
+            <div class="info" id="cafehtml"></div>
+        </article>
+    </div>
+    <xml class="hide">
+        <?xml version="1.0" encoding="utf-8" ?>
+        <menu>
+            <restaur>
+                <name id="namexml">
+                    KFC
+                </name>
+            </restaur>
+            <infoabt>
+                <rating id="ratingxml">Оценка пользователей:4.9</rating>
+                <rewiew id="rewxml">195 отзывов</rewiew>
+                <abtsale id="info1xml">Есть акции</abtsale>
+                <numsale id="info2xml">2 акции</numsale>
+                <newarrivals id="newxml">Недавно появились новые блюда</newarrivals>
+                <newnum id="newnumxml">2 новинки</newnum>
+                <legal id="cafexml">Исполнитель (продавец): Общество с ограниченной ответственностью КреативФудС-Восток, 220029, Минск, Куйбышева 19а, УНП 192419914</legal>
+            </infoabt>
+            
+        </menu>
+    </xml>
+    <script>
+        document.getElementById("namehtml").innerHTML =
+            document.getElementById("namexml").firstChild.nodeValue;
+            document.getElementById("ratinghtml").innerHTML =
+            document.getElementById("ratingxml").firstChild.nodeValue;
+            document.getElementById("rewhtml").innerHTML =
+            document.getElementById("rewxml").firstChild.nodeValue;
+            document.getElementById("info1html").innerHTML =
+            document.getElementById("info1xml").firstChild.nodeValue;
+            document.getElementById("info2html").innerHTML =
+            document.getElementById("info2xml").firstChild.nodeValue;
+            document.getElementById("newhtml").innerHTML =
+            document.getElementById("newxml").firstChild.nodeValue;
+            document.getElementById("newnumhtml").innerHTML =
+            document.getElementById("newnumxml").firstChild.nodeValue;
+            document.getElementById("cafehtml").innerHTML =
+            document.getElementById("cafexml").firstChild.nodeValue;
+            
+    </script>
+</body>
+    </html >

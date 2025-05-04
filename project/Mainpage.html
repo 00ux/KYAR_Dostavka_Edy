@@ -1,0 +1,246 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Сервис по доставке еды</title>
+    <link rel="stylesheet" href="css/page1.css" />
+    
+</head>
+<body>
+    <div class="parent">
+        <header id="header1">
+
+            <img src="images/logo.svg" class="logo" />
+            <p class="P1">Доставка еды в городе:</p>
+            <p class="hideo" id="phonehtml"></p>
+            <form class="form " id="form">
+
+                <input class="input" id="inp1" type="text">
+            </form><aside>
+                <p class="P2">Режим работы:9:00-22:00</p>
+            </aside>
+        </header>
+        <article class="art1">
+            <p class="sectionname">Рестораны</p>
+            <a class="linkto1" href="page2.html"><p class="names" id="name1html"></p></a>
+            <a class="linkto2" id="l2"><p class="names" id="name2html"></p></a>
+            <a class="linkto3"><p class="names" id="name3html"></p></a>
+
+            <p class="sectionname2">Кафе</p>
+            <a class="linkto4"><p class="names" id="name4html"></p></a>
+            <a class="linkto5"><p class="names" id="name5html"></p></a>
+            <a class="linkto6"><p class="names" id="name6html"></p></a>
+
+            <p class="sectionname3">Блюда</p>
+            <a class="linkto7"><p class="names" id="name7html"></p></a>
+            <a class="linkto8"><p class="names" id="name8html"></p></a>
+            <a class="linkto9"><p class="names" id="name9html"></p></a>
+        </article>
+    </div>
+    <xml class="hide">
+        <info>
+            <phone id="phonexml">Номер телефона для заказа:+375111111111</phone>
+            <rest id="name1xml">
+                KFC
+            </rest>
+            <rest id="name2xml">
+                Mak.by
+            </rest>
+            <rest id="name3xml">
+                Papa Doner
+            </rest>
+            <cafe id="name4xml">
+                Bubble Tea
+            </cafe>
+            <cafe id="name5xml">
+                Klaus Cafe
+            </cafe>
+            <cafe id="name6xml">
+                Драники & Кава
+            </cafe>
+            <food id="name7xml">
+                Харчо
+            </food>
+            <food id="name8xml">
+                Эклер малиновый
+            </food>
+            <food id="name9xml">
+                Сэндвич с курочкой
+            </food>
+        </info>
+    </xml>
+    <script >
+        document.getElementById('form').addEventListener('submit', function (event) {
+    event.preventDefault();
+    const inputField = document.getElementById('inp1');
+    const inputValue = inputField.value.trim();
+
+    if (inputValue) {
+        const newParagraph = document.createElement('p');
+        newParagraph.textContent = inputValue;
+        newParagraph.classList.add('fornewpgph');
+        document.getElementById('phonehtml').classList.remove("hideo");
+        inputField.replaceWith(newParagraph);
+    }
+        });
+        document.getElementById("phonehtml").innerHTML =
+            document.getElementById("phonexml").firstChild.nodeValue;
+document.getElementById("name1html").innerHTML =
+    document.getElementById("name1xml").firstChild.nodeValue;
+document.getElementById("name2html").innerHTML =
+    document.getElementById("name2xml").firstChild.nodeValue;
+document.getElementById("name3html").innerHTML =
+    document.getElementById("name3xml").firstChild.nodeValue;
+document.getElementById("name4html").innerHTML =
+    document.getElementById("name4xml").firstChild.nodeValue;
+document.getElementById("name5html").innerHTML =
+    document.getElementById("name5xml").firstChild.nodeValue;
+document.getElementById("name6html").innerHTML =
+    document.getElementById("name6xml").firstChild.nodeValue;
+document.getElementById("name7html").innerHTML =
+    document.getElementById("name7xml").firstChild.nodeValue;
+document.getElementById("name8html").innerHTML =
+    document.getElementById("name8xml").firstChild.nodeValue;
+document.getElementById("name9html").innerHTML =
+    document.getElementById("name9xml").firstChild.nodeValue;
+
+
+
+
+document.querySelectorAll('.linkto1').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph1';
+        newElement.textContent = "Заведение скоро будет в нашем сервисе!"
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+document.querySelectorAll('.linkto2').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph2';
+        newElement.textContent = 'Заведение скоро будет в нашем сервисе!';
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+document.querySelectorAll('.linkto3').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph3';
+        newElement.textContent = 'Заведение скоро будет в нашем сервисе!';
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+document.querySelectorAll('.linkto4').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph4';
+        newElement.textContent = 'Заведение скоро будет в нашем сервисе!';
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+document.querySelectorAll('.linkto5').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph5';
+        newElement.textContent = 'Заведение скоро будет в нашем сервисе!';
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+document.querySelectorAll('.linkto6').forEach(element => {
+    element.addEventListener('click', function () {
+
+        const newElement = document.createElement('span');
+        newElement.className = 'fornewpph6';
+        newElement.textContent = 'Заведение скоро будет в нашем сервисе!';
+
+
+        this.style.opacity = '0';
+
+
+        this.addEventListener('transitionend', () => {
+
+            this.replaceWith(newElement);
+
+            //
+            requestAnimationFrame(() => {
+                newElement.style.opacity = '1';
+            });
+        }, { once: true });
+    });
+});
+
+    </script>
+</body>
+</html>

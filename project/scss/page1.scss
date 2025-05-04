@@ -1,0 +1,270 @@
+@mixin font-face($family, $src) {
+  @font-face {
+    font-family: $family;
+    src: url($src);
+  }
+}
+
+@include font-face('Montserrat', '../fonts/Montserrat-VariableFont_wght.ttf');
+@include font-face('Vollkorn', '../fonts/Vollkorn-VariableFont_wght.ttf');
+
+.parent {
+  > header {
+    display: flex;
+    height: 35%;
+    width: 100%;
+  }
+  > .art1 {
+    display: flex;
+    height: 65%;
+    width: 95%;
+  }
+}
+
+.logo {
+  display: inline-block;
+  height: 30%;
+  position: absolute;
+  left: 5%;
+}
+
+.P1 {
+  display: inline-block;
+  height: 30%;
+  width: 20%;
+  font-family: "Montserrat";
+  font-size: 6.8vh;
+  position: absolute;
+  left: 20%;
+  top: 0%;
+}
+
+.form {
+  display: inline-block;
+  height: 50%;
+  position: absolute;
+  left: 37%;
+  top: 8%;
+}
+
+#phonehtml {
+    
+  height: 30%;
+  width: 20%;
+  font-family: "Montserrat";
+  font-size: 2.8vh;
+  position: absolute;
+  left: 40%;
+  top: 6%;
+}
+.hideo {
+  
+  display:none;
+}
+#inp1 {
+  display: inline-block;
+  position: absolute;
+  top: 33%;
+  height: 10%;
+  width: 25vw;
+  z-index: 50;
+  background-color: #88DD99;
+}
+
+.P2 {
+  display: inline-block;
+  height: 20%;
+  width: 20%;
+  font-family: "Montserrat";
+  font-size: 6.4vh;
+  position: absolute;
+  left: 72%;
+  top: 0%;
+}
+
+@mixin linkto($img, $color, $left, $top, $width,$border) {
+  display: inline-block;
+  height: 25%;
+  width: $width;
+  background-image: url($img);
+  background-size: cover;
+  color: $color;
+  position: absolute;
+  border:$border;
+  text-decoration: none;
+  font-family: "Vollkorn";
+  font-size: 3.6vh;
+  left: $left;
+  top: $top;
+  transition: opacity 0.5s ease;
+  cursor: pointer;
+}
+
+.linkto1 { @include linkto("../images/rest1.jpg", white, 0%, 30%, 30%,1px solid black); }
+.linkto2 { @include linkto("../images/rest2.jpg", black, 35%, 30%, 30%,1px solid black); }
+.linkto3 { @include linkto("../images/rest3.jpg", white, 70%, 30%, 28%,1px solid black); }
+.linkto4 { @include linkto("../images/cafe1.jpg", white, 0%, 62.5%, 30%,1px solid black); }
+.linkto5 { @include linkto("../images/cafe2.jpg", white, 35%, 62.5%, 30%,1px solid black); }
+.linkto6 { @include linkto("../images/cafe3.jpg", white, 70%, 62.5%, 28%,1px solid black); }
+.linkto7 { @include linkto("../images/fdmain1.jpeg", white, 0%, 95%, 30%,none); }
+.linkto8 { @include linkto("../images/fdmain2.jpeg", black, 35%, 95%, 30%,none); }
+.linkto9 { @include linkto("../images/fdmain3.jpeg", white, 70%, 95%, 28%,none); }
+
+@mixin fornewpph($left, $top, $cursor: auto) {
+  display: inline-block;
+  height: 25%;
+  width: 30%;
+  color: black;
+  position: absolute;
+  text-decoration: none;
+  font-family: "Vollkorn";
+  font-size: 3.6vh;
+  left: $left;
+  top: $top;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  cursor: $cursor;
+}
+
+.fornewpph1 { @include fornewpph(0%, 30%); }
+.fornewpph2 { @include fornewpph(35%, 30%); }
+.fornewpph3 { @include fornewpph(70%, 30%); }
+.fornewpph4 { @include fornewpph(0%, 62.5%); }
+.fornewpph5 { @include fornewpph(35%, 62.5%); }
+.fornewpph6 { @include fornewpph(70%, 62.5%); }
+.fornewpph7 { @include fornewpph(0%, 95%, pointer); }
+.fornewpph8 { @include fornewpph(35%, 95%, pointer); }
+.fornewpph9 { @include fornewpph(70%, 95%, pointer); }
+
+.names {
+  position: absolute;
+  top: 50%;
+}
+
+.sectionname {
+  font-family: "Montserrat";
+  font-size: 4.8vh;
+  position: absolute;
+  left: 0%;
+  top: 14%;
+}
+
+.sectionname2 {
+  font-family: "Montserrat";
+  font-size: 4.8vh;
+  position: absolute;
+  left: 0%;
+  top: 46%;
+}
+
+.sectionname3 {
+  font-family: "Montserrat";
+  font-size: 4.8vh;
+  position: absolute;
+  left: 0%;
+  top: 79%;
+}
+
+.art1 {
+  position: absolute;
+  top: 20%;
+}
+
+.fornewpgph {
+  font-family: "Montserrat";
+  font-size: 4.8vh;
+  position: absolute;
+  top: 25%;
+}
+
+.hide {
+  display: none;
+  width: 40%;
+}
+
+@media screen and (max-width: 1028px) {
+  .linkto1 { background-image: url("../images/tablet/rest1.jpg"); }
+  .linkto2 { background-image: url("../images/tablet/rest2.jpg"); }
+  .linkto3 { background-image: url("../images/tablet/rest3.jpg"); }
+  .linkto4 { background-image: url("../images/tablet/cafe1.jpg"); }
+  .linkto5 { background-image: url("../images/tablet/cafe2.jpg"); }
+  .linkto6 { background-image: url("../images/tablet/cafe3.jpg"); }
+  .linkto7 { background-image: url("../images/tablet/fdmain1.jpeg"); }
+  .linkto8 { background-image: url("../images/tablet/fdmain2.jpeg"); }
+  .linkto9 { background-image: url("../images/tablet/fdmain3.jpeg"); }
+}
+@function getlinktomobilesize($i){
+  @if($i >=1 and $i <=9){@return 1.6vh;}
+}
+@media screen and (max-width: 1028px) {
+  @for $i from 1 through 9 {
+    .linkto#{$i} { font-size: getlinktomobilesize($i) }
+  }
+ 
+  #phonehtml{
+    font-size: 1.2vh;
+    top: 10%;
+    left: 72%;
+  }
+  
+  .P1, .P2 {
+    font-size: 2.4vh;
+    height: 30%;
+    width: 20%;
+  }
+  
+  .P1 { left: 20%; }
+  .P2 { left: 72%; }
+  
+  .logo {
+    width: 15%;
+    left: 0%;
+    top: -8%;
+  }
+  
+  .form {
+    left: 43%;
+    top: 7%;
+  }
+  
+  #inp1 {
+    height: 7%;
+    top: 1.5%;
+    left: 13%;
+    font-family: "Vollkorn";
+    font-size: 400%;
+  }
+  
+  .fornewpgph {
+    font-size: 3.2vh;
+    top: -4.3%;
+    left: 13%;
+  }
+  
+  .art1 { top: -2.5%; }
+  
+  .sectionname, .sectionname2, .sectionname3 {
+    font-size: 2.4vh;
+  }
+  
+  .sectionname { top: 22%; }
+  .sectionname2 { top: 54%; }
+  .sectionname3 { top: 86.5%; }
+  
+  .names { top: 80%; }
+}
+
+@media screen and (max-device-width: 600px) {
+  .linkto1 { background-image: url("../images/mobile/rest1.jpg"); }
+  .linkto2 { background-image: url("../images/mobile/rest2.jpg"); }
+  .linkto3 { background-image: url("../images/mobile/rest3.jpg"); }
+  .linkto4 { background-image: url("../images/mobile/cafe1.jpg"); }
+  .linkto5 { background-image: url("../images/mobile/cafe2.jpg"); }
+  .linkto6 { background-image: url("../images/mobile/cafe3.jpg"); }
+  .linkto7 { background-image: url("../images/mobile/fdmain1.jpeg"); }
+  .linkto8 { background-image: url("../images/mobile/fdmain2.jpeg"); }
+  .linkto9 { background-image: url("../images/mobile/fdmain3.jpeg"); }
+  
+  #name8html { top: 63%; }
+  #name9html { top: 63%; }
+}

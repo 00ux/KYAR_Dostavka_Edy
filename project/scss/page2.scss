@@ -1,0 +1,175 @@
+
+@import 'variables.scss';
+
+
+@mixin font-face($font-family, $src) {
+    @font-face {
+        font-family: $font-family;
+        src: url($src);
+    }
+}
+
+@mixin flex-position($display: flex, $height: null, $width: null) {
+    display: $display;
+    height: $height;
+    width: $width;
+}
+
+@mixin absolute-position($left, $top, $width: null) {
+    position: absolute;
+    left: $left;
+    top: $top;
+    width: $width;
+}
+
+@mixin font-style($font-family, $font-size) {
+    font-family: $font-family;
+    font-size: $font-size;
+}
+
+@mixin button-style($height, $width, $left, $top, $font-family, $font-size, $border: none) {
+    @include absolute-position($left, $top);
+    @include font-style($font-family, $font-size);
+    display: inline-block;
+    height: $height;
+    width: $width;
+    background-color: $color-primary;
+    color: black;
+    text-decoration: none;
+    border: $border;
+}
+
+
+@include font-face($font-montserrat, '../fonts/Montserrat-VariableFont_wght.ttf');
+@include font-face($font-vollkorn, '../fonts/Vollkorn-VariableFont_wght.ttf');
+
+.parent {
+    > header {
+        @include flex-position($height: 35%, $width: 100%);
+    }
+    
+    > article {
+        @include flex-position($height: 65%, $width: 100%);
+    }
+}
+
+.logo {
+    @include absolute-position(2%, 0%);
+    display: inline-block;
+    height: 10%;
+}
+
+.P1 {
+    @include absolute-position(7%, -2%, 40%);
+    @include font-style($font-montserrat, 4.8vh);
+    display: inline-block;
+    height: 8%;
+}
+
+.img1 {
+    @include absolute-position(0%, 10%, 55%);
+    display: inline-block;
+    height: 55%;
+}
+
+.infotop {
+    @include absolute-position(60%, 6%, 20%);
+    @include font-style($font-montserrat, 3.2vh);
+}
+
+.infotopline2 {
+    @include absolute-position(60%, 23%, 20%);
+    @include font-style($font-montserrat, 3.2vh);
+}
+
+.infotop2 {
+    @include absolute-position(60%, 43%, 15%);
+    @include font-style($font-montserrat, 3.2vh);
+}
+
+.infobtm {
+    @include absolute-position(60%, 14%);
+    @include font-style($font-vollkorn, 2.4vh);
+}
+
+.infobtmline2 {
+    @include absolute-position(60%, 26.5%);
+    @include font-style($font-vollkorn, 2.4vh);
+}
+
+.infobtmline3 {
+    @include absolute-position(60%, 55%);
+    @include font-style($font-vollkorn, 2.4vh);
+}
+
+.linkto1 {
+    @include button-style(20%, 65%, -10%, 75%, $font-montserrat, 4.8vh, $border-black);
+}
+
+.names {
+    @include absolute-position(35%, 5%);
+}
+
+.info {
+    @include button-style(20%, 20%, 60%, 75%, $font-vollkorn, 2.4vh);
+}
+
+.hide {
+    display: none;
+    width: 40%;
+}
+
+@media screen and (max-width: 1028px) {
+    .P1 {
+        @include absolute-position(17%, -1%, 80%);
+        @include font-style($font-montserrat, 4vh);
+        height: 20%;
+    }
+
+    .img1 {
+        @include absolute-position(0%, 10%, 55%);
+        height: 25%;
+    }
+
+    .infotop {
+        @include absolute-position(60%, 8%, 20%);
+        @include font-style($font-montserrat, 2.0vh);
+    }
+
+    .infotopline2 {
+        @include absolute-position(60%, 15%, 20%);
+        @include font-style($font-montserrat, 2.0vh);
+    }
+
+    .infotop2 {
+        @include absolute-position(60%, 22%, 15%);
+        @include font-style($font-montserrat, 2.0vh);
+    }
+
+    .infobtm {
+        @include absolute-position(60%, 12%);
+        @include font-style($font-vollkorn, 2.0vh);
+    }
+
+    .infobtmline2 {
+        @include absolute-position(60%, 19.5%);
+        @include font-style($font-vollkorn, 2.0vh);
+    }
+
+    .infobtmline3 {
+        @include absolute-position(60%, 31%);
+        @include font-style($font-vollkorn, 2.0vh);
+    }
+
+    .linkto1 {
+        @include button-style(15%, 100%, 0%, 37.5%, $font-montserrat, 2.8vh, $border-black);
+    }
+
+    .info {
+        @include button-style(12.5%, 100%, 0%, 55%, $font-vollkorn, 2.0vh);
+    }
+
+    .names {
+        @include absolute-position(30%, 15%);
+    }
+}
